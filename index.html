@@ -22,8 +22,6 @@
 					<li><a href="#experience">Experience</a></li>
 					<li><a href="#education">Education</a></li>
 					<li><a href="#projects">Publications</a></li>
-					<li><a href="#projects">Dogi</a></li>
-
 				</ul>
 			</nav>
 
@@ -676,12 +674,26 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
-				document.querySelectorAll('.flip-circle-container').forEach(container => {
-				  container.addEventListener('click', () => {
-					container.classList.toggle('flip-active');
-				  });
-				});
-			  </script>
+				let hasFlipped = false;
+			  
+				function autoFlipOnce() {
+				  if (hasFlipped) return;
+			  
+				  const flipContainer = document.querySelector('.flip-circle-container');
+				  if (flipContainer) {
+					flipContainer.classList.add('flip-active');
+					hasFlipped = true;
+				  }
+			  
+				  // Remove listener after first interaction
+				  document.removeEventListener('click', autoFlipOnce);
+				  document.removeEventListener('touchstart', autoFlipOnce);
+				}
+			  
+				// Attach to first click or tap
+				document.addEventListener('click', autoFlipOnce);
+				document.addEventListener('touchstart', autoFlipOnce);
+			</script>
 
 	</body>
 </html>
