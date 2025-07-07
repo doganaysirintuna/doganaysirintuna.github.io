@@ -2865,7 +2865,7 @@ input, select, textarea {
 	perspective: 1000px;
 	width: 100%;
 	max-width: 300px;
-	aspect-ratio: 1 / 1; /* Keep it square */
+	aspect-ratio: 1 / 1;
 	margin: auto;
 	cursor: pointer;
   }
@@ -2911,3 +2911,4 @@ input, select, textarea {
 	  max-width: 150px;
 	}
   }
+  
