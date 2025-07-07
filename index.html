@@ -676,24 +676,39 @@
 			<script>
 				let hasFlipped = false;
 			  
-				function autoFlipOnce() {
-				  if (hasFlipped) return;
-			  
-				  const flipContainer = document.querySelector('.flip-circle-container');
-				  if (flipContainer) {
-					flipContainer.classList.add('flip-active');
-					hasFlipped = true;
-				  }
-			  
-				  // Remove listener after first interaction
-				  document.removeEventListener('click', autoFlipOnce);
-				  document.removeEventListener('touchstart', autoFlipOnce);
+				// Utility function to detect mobile devices (basic)
+				function isMobile() {
+				  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 				}
 			  
-				// Attach to first click or tap
-				document.addEventListener('click', autoFlipOnce);
-				document.addEventListener('touchstart', autoFlipOnce);
-			</script>
+				if (isMobile()) {
+				  // Auto flip once on first interaction
+				  function autoFlipOnce() {
+					if (hasFlipped) return;
+			  
+					const flipContainer = document.querySelector('.flip-circle-container');
+					if (flipContainer) {
+					  flipContainer.classList.add('flip-active');
+					  hasFlipped = true;
+					}
+			  
+					// Remove listeners after first flip
+					document.removeEventListener('click', autoFlipOnce);
+					document.removeEventListener('touchstart', autoFlipOnce);
+				  }
+			  
+				  document.addEventListener('click', autoFlipOnce);
+				  document.addEventListener('touchstart', autoFlipOnce);
+			  
+				  // Also add manual toggle on tap only for mobile
+				  const flipContainer = document.querySelector('.flip-circle-container');
+				  if (flipContainer) {
+					flipContainer.addEventListener('click', () => {
+					  flipContainer.classList.toggle('flip-active');
+					});
+				  }
+				}
+			  </script>
 
 	</body>
 </html>
