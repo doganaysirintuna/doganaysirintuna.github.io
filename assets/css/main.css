@@ -174,7 +174,7 @@ input, select, textarea {
 		}
 
 	h2 {
-		font-size: 2em;
+		font-size: 2.5em;
 		letter-spacing: -0.015em;
 	}
 
@@ -2481,7 +2481,7 @@ input, select, textarea {
 		box-sizing: border-box;
 	  }
 	  .project {
-		padding: 15px 0;
+		padding: 20px 0;
 		border-bottom: 1px solid #ddd; /* subtle line between projects */
 	  }
 	  
@@ -2649,7 +2649,9 @@ input, select, textarea {
 		}
 	  }
 
-
+	  .resume-section-content h2 {
+		margin-left: -3px; /* adjust as needed */
+	  }
 /* === Education Timeline Styles === */
 .education-section {
 	display: block;
@@ -2718,14 +2720,14 @@ input, select, textarea {
   
   .card h3 {
 	margin-top: 0;
-	font-size: 1.2rem;
+	font-size: 1.6rem;
 	color: #444;
   }
   
 
   
   .card .institution {
-	font-size: 1.1rem;
+	font-size: 1.2rem;
 	color: #555;
   }
   
@@ -2849,6 +2851,11 @@ input, select, textarea {
 	.timeline-item::before {
 	  left: 0px;
 	}
+
+	.resume-section-content h2 {
+		font-size: 1.6rem;  /* or 1.8rem if you want it larger */
+		margin-bottom: 1.5rem;
+	  }
   }
   
   
