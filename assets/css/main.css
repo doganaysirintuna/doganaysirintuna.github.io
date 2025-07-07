@@ -2861,12 +2861,13 @@ input, select, textarea {
   
 
 /* Image Change */
-
 .flip-circle-container {
 	perspective: 1000px;
-	width: 300px; /* adjust as needed */
-	height: 300px;
+	width: 100%;
+	max-width: 300px;
+	aspect-ratio: 1 / 1; /* Keep it square */
 	margin: auto;
+	cursor: pointer;
   }
   
   .flip-circle-inner {
@@ -2878,7 +2879,8 @@ input, select, textarea {
 	transform-style: preserve-3d;
   }
   
-  .flip-circle-container:hover .flip-circle-inner {
+  .flip-circle-container:hover .flip-circle-inner,
+  .flip-circle-container.flip-active .flip-circle-inner {
 	transform: rotateY(180deg);
   }
   
@@ -2904,3 +2906,8 @@ input, select, textarea {
 	transform: rotateY(180deg);
   }
   
+  @media screen and (max-width: 600px) {
+	.flip-circle-container {
+	  max-width: 150px;
+	}
+  }
