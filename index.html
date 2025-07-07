@@ -676,21 +676,20 @@
 			<script>
 				let hasFlipped = false;
 			  
-				// Utility function to detect mobile devices (basic)
+				// Basic mobile detection
 				function isMobile() {
 				  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 				}
 			  
 				if (isMobile()) {
-				  // Auto flip once on first interaction
+				  const flipContainers = document.querySelectorAll('.flip-circle-container');
+			  
+				  // Flip all containers once on first global tap/click
 				  function autoFlipOnce() {
 					if (hasFlipped) return;
 			  
-					const flipContainer = document.querySelector('.flip-circle-container');
-					if (flipContainer) {
-					  flipContainer.classList.add('flip-active');
-					  hasFlipped = true;
-					}
+					flipContainers.forEach(container => container.classList.add('flip-active'));
+					hasFlipped = true;
 			  
 					// Remove listeners after first flip
 					document.removeEventListener('click', autoFlipOnce);
@@ -700,13 +699,13 @@
 				  document.addEventListener('click', autoFlipOnce);
 				  document.addEventListener('touchstart', autoFlipOnce);
 			  
-				  // Also add manual toggle on tap only for mobile
-				  const flipContainer = document.querySelector('.flip-circle-container');
-				  if (flipContainer) {
-					flipContainer.addEventListener('click', () => {
-					  flipContainer.classList.toggle('flip-active');
+				  // Add toggle flip on tap for each container individually
+				  flipContainers.forEach(container => {
+					container.addEventListener('click', (e) => {
+					  e.stopPropagation(); // Prevent global listener triggering again
+					  container.classList.toggle('flip-active');
 					});
-				  }
+				  });
 				}
 			  </script>
 
