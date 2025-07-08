@@ -2724,7 +2724,11 @@ input, select, textarea {
 	color: #444;
   }
   
-
+  .card h5 {
+	margin-top: 0;
+	font-size: 0.9rem;
+	color: #444;
+  }
   
   .card .institution {
 	font-size: 1.2rem;
@@ -2912,3 +2916,34 @@ input, select, textarea {
 	}
   }
   
+  @media screen and (max-width: 600px) {
+	#nav {
+		height: auto; /* allow height to grow */
+		line-height: normal; /* allow wrapping */
+		padding: 0.2em 0;
+	}
+
+	#nav ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		padding: 0;
+		margin: 0 auto;
+		max-width: 100%;
+	}
+
+	#nav li {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 1px 6px;
+	}
+
+	#nav a {
+		font-size: 0.95em;
+		padding: 0.5em 1em;
+		height: auto;
+		line-height: 1.2em;
+		white-space: nowrap; /* optional: prevents awkward wrapping of single links */
+	}
+}
