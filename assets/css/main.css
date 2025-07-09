@@ -2488,6 +2488,76 @@ input, select, textarea {
 	  .project:last-child {
 		border-bottom: none; /* no line after the last project */
 	  }
+
+
+
+
+	  /* Accordion styling */
+/* Unified style for project accordions */
+.projects-section details {
+	background: white;
+	border-radius: 12px;
+	padding: 1.5rem;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+	transition: all 0.3s ease;
+	margin-bottom: 1.5rem;
+	border: none; /* Remove light border to match .skill-card */
+  }
+  
+  .projects-section summary {
+	font-size: 1.2rem;
+	font-weight: bold;
+	cursor: pointer;
+	color: #333;
+	list-style: none;
+	outline: none;
+	padding: 0; /* Let the parent details handle padding */
+	margin-bottom: 0.5rem;
+  }
+  
+  /* Optional: Add hover effect for summary like skill-card */
+  .projects-section details:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  }
+  
+  .projects-section summary::-webkit-details-marker {
+	display: none;
+  }
+  
+  .projects-section summary::before {
+	content: '▶';
+	display: inline-block;
+	margin-right: 8px;
+	transition: transform 0.3s ease;
+  }
+
+  .projects-section details[open] summary {
+	margin-bottom: 2rem; /* Add spacing between summary and content */
+  }
+  
+  .projects-section details[open] summary::before {
+	transform: rotate(90deg);
+  }
+
+  .projects-section .explanation {
+	margin-top: 0.5rem;
+  }
+  
+  /* Optional: Improve button inside paper box */
+  .btn-link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #ff6600;
+	color: white;
+	padding: 6px 12px;
+	border-radius: 12px;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 13px;
+	gap: 10px;
+  }
 	  
 	  /* ------------------ Idil ADDED ---------------*/
 	  
@@ -3056,5 +3126,27 @@ input, select, textarea {
   
 	.skill-card.tools-libs {
 	  grid-column: span 1; /* Use only one column block (2fr sized) */
+	}
+  }
+
+  /* About Section */
+
+
+  .wrapper.style1 p.about-text {
+	text-align: justify;
+	font-size: 1.2rem !important;
+  }
+  
+  @media (max-width: 768px) {
+	.wrapper.style1 p.about-text {
+	text-align: justify;
+	  font-size: 1rem !important;
+	}
+  }
+  
+  @media (max-width: 480px) {
+	.wrapper.style1 p.about-text {
+	text-align: justify;
+	  font-size: 0.9rem !important;
 	}
   }
