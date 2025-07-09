@@ -2543,6 +2543,18 @@ input, select, textarea {
   .projects-section .explanation {
 	margin-top: 0.5rem;
   }
+
+	@media (max-width: 480px) {
+	.projects-section details summary {
+		font-size: 0.9rem;
+	}
+
+	@media (max-width: 480px) {
+		.projects-section  h3 {
+		  font-size: 1.2rem;
+		}
+	  }
+	}
   
   /* Optional: Improve button inside paper box */
   .btn-link {
@@ -2797,7 +2809,7 @@ input, select, textarea {
   
   .card h5 {
 	margin-top: 0;
-	font-size: 0.9rem;
+	font-size: 1.2rem;
 	color: #444;
   }
   
@@ -2912,7 +2924,7 @@ input, select, textarea {
   
 	.card .description {
 	  margin-top: 12px;
-	  font-size: 0.95rem;
+	  font-size: 0.9rem;
 	  line-height: 1.4;
 	}
   
@@ -2932,9 +2944,12 @@ input, select, textarea {
 		font-size: 1.6rem;  /* or 1.8rem if you want it larger */
 		margin-bottom: 1.5rem;
 	  }
+	
+	.text-block h5 {
+		font-size: 0.9rem;
+	  }
   }
-  
-  
+
 
 /* Image Change */
 .flip-circle-container {
