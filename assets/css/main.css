@@ -3166,3 +3166,19 @@ input, select, textarea {
 	  font-size: 0.9rem !important;
 	}
   }
+
+  .conference-logo {
+	height: 2em;         /* Scale relative to text */
+	margin-right: 8px;     /* Space between logo and text */
+	vertical-align: middle;
+  }
+
+  .custom-link {
+	color: #555; /* Change to any color you like */
+	text-decoration: underline; /* Optional: remove underline */
+	font-weight: 500;      /* Optional: adjust weight */
+  }
+
+  /* html {
+	scroll-behavior: smooth;
+  } */
